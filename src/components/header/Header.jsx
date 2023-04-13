@@ -2,8 +2,17 @@ import React, { useState } from 'react'
 import './Header.css'
 import { Link } from 'react-router-dom'
 
+import SearchOutlineIcon from '@mui/icons-material/SearchOutlineIcon'
+import WorkIcon from '@mui/icons-material/Work'
+import GridViewIcon from '@mui/icons-material/GridView';
+
 const Header = () => {
     const [sidebar, setSideBar] = useState(false)
+
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector(".header")
+        header.classList.toggle("active")
+    })
 
   return (
     <header className='header'>
@@ -34,7 +43,9 @@ const Header = () => {
                     <Link to="/contact">Contact</Link>
                 </li>
                 <li className="icon">
-                    {/* <SearchOutlineIcon /> */}
+                    <SearchOutlineIcon /> 
+                    <WorkIcon />
+                    <GridViewIcon />
                 </li>
             </ul>
            </div>
