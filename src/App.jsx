@@ -1,7 +1,7 @@
 
 import './App.css'
-import Header from './components/header/Header';
-
+import Header from './components/header/Header'
+import HomePage from './components/pageContent/HomePage'
 import {
   BrowserRouter as Router,
   Routes,
@@ -12,11 +12,11 @@ function App() {
   return (
     <Router>
       <Header>
-     
+        
       </Header>
 
     <Routes>
-      <Route />
+      <Route path="/" element={ <HomePage /> } />
     </Routes>
 
     </Router>

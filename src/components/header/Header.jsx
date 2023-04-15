@@ -2,9 +2,11 @@ import React, { useState } from 'react'
 import './Header.css'
 import { Link } from 'react-router-dom'
 
-import SearchOutlineIcon from '@mui/icons-material/SearchOutlineIcon'
-import WorkIcon from '@mui/icons-material/Work'
-import GridViewIcon from '@mui/icons-material/GridView';
+import SearchIcon from '@mui/icons-material/Search';
+import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
+import AppsIcon from '@mui/icons-material/Apps';
+import CloseIcon from '@mui/icons-material/Close';
+import MenuIcon from '@mui/icons-material/Menu';
 
 const Header = () => {
     const [sidebar, setSideBar] = useState(false)
@@ -40,15 +42,18 @@ const Header = () => {
                     <Link to="/shop">Shop</Link>
                 </li>
                 <li>
-                    <Link to="/contact">Contact</Link>
+                    <Link to="/contact">Contact</Link> 
                 </li>
                 <li className="icon">
-                    <SearchOutlineIcon /> 
-                    <WorkIcon />
-                    <GridViewIcon />
+                    <SearchIcon className="HeaderIcon" /> 
+                    <BusinessCenterIcon className="HeaderIcon" />
+                    <AppsIcon className="HeaderIcon" />
                 </li>
             </ul>
            </div>
+           <button className="navbar-items-icon" onClick={() => setSideBar(!sidebar)}>
+            {sidebar ? <CloseIcon /> : <MenuIcon /> }
+           </button>
         </div>
     </header>
   )
